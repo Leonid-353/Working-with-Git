@@ -66,16 +66,16 @@
 
 ```mermaid
 
-graph LR;
+flowchart TD
 
-   untracked -- "git add" --> staged (в списке на коммит) + tracked;
+   A (untracked "(неотслеживаемый)") -- "git add" --> B (staged "(в списке на коммит)" + tracked);
 
-   staged (в списке на коммит) + tracked -- "git commit" --> tracked (отслеживаемый);
+   B -- "git commit" --> C (tracked "(отслеживаемый)");
 
-   staged (в списке на коммит) + tracked -- "Измениня" --> modified (изменённый);
+   B -- "Измениня" --> D (modified "(изменённый)");
 
-   tracked (отслеживаемый) -- "Изменения" --> modified;
+   C --- "Изменения" ---> D;
 
-   modified (изменённый) -- "git add" --> staged (в списке на коммит) + tracked;
+   D -- "git add" --> B;
 
 ```
