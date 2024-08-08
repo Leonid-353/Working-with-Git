@@ -62,3 +62,20 @@
 
 Теперь тебя найдут, если накосячишь =)
 
+# Жизненный цикл файла в Git.
+
+```mermaid
+
+graph LR;
+
+   untracked -- "git add" --> staged (в списке на коммит) + tracked;
+
+   staged (в списке на коммит) + tracked -- "git commit" --> tracked (отслеживаемый);
+
+   staged (в списке на коммит) + tracked -- "Измениня" --> modified (изменённый);
+
+   tracked (отслеживаемый) -- "Изменения" --> modified;
+
+   modified (изменённый) -- "git add" --> staged (в списке на коммит) + tracked;
+
+```
