@@ -65,17 +65,10 @@
 # Жизненный цикл файла в Git.
 
 ```mermaid
-
 flowchart TD
-
    A (untracked "(неотслеживаемый)") -- "git add" --> B (staged "(в списке на коммит)" + tracked);
-
    B -- "git commit" --> C (tracked "(отслеживаемый)");
-
    B -- "Измениня" --> D (modified "(изменённый)");
-
    C --- "Изменения" ---> D;
-
    D -- "git add" --> B;
-
 ```
